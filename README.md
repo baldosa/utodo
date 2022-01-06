@@ -58,7 +58,7 @@ For running the server and app together I am using concurrently this helps a lot
 - [ ] Gmail integration
 - [ ] Chrome integration
 
-## Author
+## Authors
 
 **Emanuel Guillen**
 
