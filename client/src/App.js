@@ -22,6 +22,18 @@ const data = {
       title: 'Completed',
       label: '0/0',
       cards: []
+    },
+    {
+      id: 'lane2',
+      title: 'Completed',
+      label: '0/0',
+      cards: []
+    },
+    {
+      id: 'lane2',
+      title: 'Completed',
+      label: '0/0',
+      cards: []
     }
   ]
 }

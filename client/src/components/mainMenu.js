@@ -19,7 +19,7 @@ class mainMenu extends Component {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             uTodo
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Login</Button> or <Button color="inherit">Register</Button>
         </Toolbar>
       </AppBar>
     )
