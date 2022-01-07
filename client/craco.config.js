@@ -11,6 +11,7 @@ module.exports = {
               '@assets': path.resolve(__dirname, 'src/components'),
               '@components': path.resolve(__dirname, 'src/components'),
               '@views': path.resolve(__dirname, 'src/views'),
+              '@images': path.resolve(__dirname, 'src/static/images'),
               // ...etc
             },
           }
