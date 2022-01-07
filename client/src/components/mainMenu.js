@@ -123,7 +123,7 @@ const MainMenu = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-                <Avatar alt="a" src={userimg} />
+                <Avatar alt="a" src={userimg} onClick={handleOpenUserMenu} />
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
