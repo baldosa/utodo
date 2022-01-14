@@ -1,11 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Board from 'react-trello'
 import { Box } from '@mui/material';
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import MainMenu from '@components/mainMenu';
+import HomeView from '@views/home';
+import AboutView from '@views/about';
+import HelpView from '@views/help';
+import BoardView from '@views/board';
+import MyBoardsView from '@views/myBoards';
+import { styled } from '@mui/system';
 // import MainMenu from 'components/mainMenu';
 
+
+const MainContainer = styled(Box)`
+  font-size: 1.1em;
+  color: #FAFAFA;
+  flexGrow: 1;
+`;
 
 const data = {
   lanes: [
@@ -29,12 +43,16 @@ const data = {
 
 function App() {
   return (
-    <div className="App">
-      <Box sx={{ flexGrow: 1 }}>
-        <MainMenu></MainMenu>
-      </Box>
-      <Board data={data}  editable />
-    </div>
+    <MainContainer>
+      <MainMenu></MainMenu>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="about" element={<AboutView />} />
+        <Route path="Help" element={<HelpView />} />
+        <Route path="board" element={<BoardView />} />
+        <Route path="myBoards" element={<MyBoardsView />} />
+      </Routes>
+    </MainContainer>
   );
 }
 

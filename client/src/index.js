@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
+import { BrowserRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
+    <Helmet>
+        <title>uTodo</title>
+    </Helmet>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
