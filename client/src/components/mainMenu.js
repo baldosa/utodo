@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import { styled } from '@mui/system';
 import userimg from '@images/luci';
+
 const pages = ['Board', 'My Boards', 'About', 'Help'];
 const settings = ['Account', 'Logout'];
 
@@ -18,6 +19,7 @@ const MainMenu = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -43,7 +45,7 @@ const MainMenu = () => {
 
 
   return (
-    <AppBar color="secondary" position="static">
+    <AppBar color="secondary" position="static" sx={{ mb: 5}}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
           <UndecoratedLink to="/">

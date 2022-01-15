@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
-import { Button, IconButton, Box, Fab, Grid, Container, Typography } from '@mui/material';
-import Board from 'react-trello'
-import AddIcon from '@mui/icons-material/Add';
+import React from 'react'
+import { Grid, Container, Typography } from '@mui/material';
 import { Helmet } from "react-helmet";
 import { styled } from '@mui/system';
 
@@ -22,17 +20,15 @@ const HomeView = () => {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        style={{ minHeight: '90vh' }}
+        style={{ marginTop: '200px' }}
       >
         <Helmet>
           <title>uTodo | Welcome!</title>
         </Helmet>
-        <Grid item xs={3}>
-          <Typography variant="h1"
-          noWrap>uTodo</Typography>
+        <Grid item>
+          <Typography variant="h1">uTodo</Typography>
           <Text>The best todo app ever created.</Text>
         </Grid>
-
       </Grid>
     </Container>
   );
