@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { Button, IconButton, Box, Fab } from '@mui/material';
+import React from 'react'
+import { Box, Fab } from '@mui/material';
 import Board from 'react-trello'
 import AddIcon from '@mui/icons-material/Add';
+import { styled } from '@mui/material/styles';
 
 // Override components here
 const components = {
@@ -48,8 +49,8 @@ const TaskBoard = () => {
 };
 
 const FancyTaskBoard = styled(TaskBoard)`
-  padding: 40px !important;
   height: auto !important;
+  margin: 100px !important;
 `;
 
 export default FancyTaskBoard;
