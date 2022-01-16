@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Slide from '@mui/material/Slide';
+import { styled } from '@mui/material/styles';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -53,6 +54,27 @@ const data = {
     }
   ]
 }
+const FilledIconButton = styled(IconButton)({
+  marginLeft: '10px',
+  color: '#FAFAFA',
+  backgroundColor: '#9c27b0',
+  padding: '10px',
+  borderColor: '#0063cc',
+  fontFamily: [].join(','),
+  '&:hover': {
+    backgroundColor: '#842294',
+    borderColor: '#0062cc',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#842294',
+    borderColor: '#005cbf',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
 
 const BoardView = () => {
   const [open, setOpen] = React.useState(false);
@@ -70,9 +92,9 @@ const BoardView = () => {
       </Helmet>
       <h1>Board&nbsp;
       <Tooltip title="Edit this board">
-        <IconButton aria-label="Edit Board">
-          <EditIcon onClick={handleClickOpen} />
-        </IconButton>
+        <FilledIconButton aria-label="Edit Board" size="small">
+          <EditIcon onClick={handleClickOpen} fontSize="small" />
+        </FilledIconButton>
       </Tooltip>
       </h1>
       <Dialog
@@ -128,9 +150,11 @@ const BoardView = () => {
               </Box>
             </Dialog>
       <Board data={data} components={components} editable />
-      <Fab color="primary" aria-label="add">
-        <AddIcon />
-      </Fab>
+      <Tooltip title="Add a task">
+        <Fab color="secondary" aria-label="Add task"  sx={{ mt: 3 }} >
+          <AddIcon />
+        </Fab>
+      </Tooltip>
     </Container>
   );
 };
