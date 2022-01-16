@@ -1,47 +1,64 @@
-# utodo
+# uTodo
+&nbsp;
 
-The ultimate todo tasks manager.
+### *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" " " "  &nbsp; The ultimate todo tasks manager.   " " " "*
 
+&nbsp;
+
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
 ## Links
 
-- [Repo](https://github.com/baldosa/utodo "utodo Repo")
+- [Repo](https://github.com/baldosa/utodo)
 
-- [Live](utodo.meme.ar "Live View")
+- [Live](utodo.meme.ar)
 
-- [Bugs](https://github.com/baldosa/utodo/issues "Issues Page")
+- [Bugs](https://github.com/baldosa/utodo/issues)
 
-- [API](<API Link> "API")
-
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;          
+  
 ## Screenshots
 
-![Home Page](/screenshots/1.png "Home Page")
+![Home Page](/screenshots/1.png)
 
 ![](/screenshots/2.png)
 
 ![](/screenshots/3.png)
 
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
 ## Available Commands
 
 ### Client
 
-In the client directory, you can run:
+`"npm start"`
 
-### `npm start" : "react-scripts start"`,
+Runs the app in Development mode.  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  
+(You may also need to run the server).
 
-The app is built using `create-react-app` so this command Runs the app in Development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You also need to run the server file as well to completely run the app. The page will reload if you make edits.
-You will also see any lint errors in the console.
+`"npm run build"`
 
-### `"npm run build": "react-scripts build"`,
+Builds the app for production to the `build` folder.  
+It correctly bundles React in production mode and optimizes the build for the best performance.  
+The build is minified and the filenames include the hashes.
 
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app will be ready to deploy!
-
-### `"npm run test": "react-scripts test"`,
+`"npm run test"`
 
 Launches the test runner in the interactive watch mode.
 
-### `"npm run dev": "concurrently "nodemon server" "npm run start"`,
 
-For running the server and app together I am using concurrently this helps a lot in the MERN application as it runs both the server (client and server) concurrently. So you can work on them both together.
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
 
 ## Built With
 
@@ -51,27 +68,47 @@ For running the server and app together I am using concurrently this helps a lot
 - HTML
 - CSS
 
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
+
 ## Future Updates
 
-- [ ] Github integration
-- [ ] Gitlab integration
-- [ ] Gmail integration
-- [ ] Chrome integration
+- [ ] Github integration.
+- [ ] Gitlab integration.
+- [ ] Gmail integration.
+- [ ] Web Browsers integration.
+
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
 
 ## Authors
+
+
+&nbsp;&nbsp;
 
 **Emanuel Guillen**
 
 - [Profile](https://github.com/baldosa)
-- [Email](mailto:rohitjain19060@gmail.com?subject=Hi "Hi!")
-- [Website](https://meme.ar")
+- [Email](mailto:ema@guillen.com.ar)
+- [Website](https://meme.ar)
+
+
+&nbsp;&nbsp;
 
 **Damian Mantuano**
 
-- [Profile](https://github.com/smarbos")
+- [Profile](https://github.com/smarbos)
 - [Email](mailto:smarbos@gmail.com)
 - [Website](https://mutante.ar)
 
+&nbsp;&nbsp;
+    
+---
+&nbsp;&nbsp;    
 ## 🤝 Support
 
 Contributions, issues, and feature requests are welcome!
