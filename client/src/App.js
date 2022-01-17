@@ -24,7 +24,7 @@ function App() {
         <Route path="about" element={<AboutView />} />
         <Route path="Help" element={<HelpView />} />
         <Route path="board" element={<BoardView />} />
-        <Route path="myBoards" element={<MyBoardsView />} />
+        <Route exact path="/myBoards" component={() => <MyBoardsView title={`Props through component`} />} />
       </Routes>
     </MainContainer>
   );
