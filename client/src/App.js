@@ -9,12 +9,15 @@ import HelpView from '@views/help';
 import BoardView from '@views/board';
 import MyBoardsView from '@views/myBoards';
 import { styled } from '@mui/system';
+<<<<<<< HEAD
 import { persistStore } from 'redux-persist'
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 
 let persistor = persistStore(store);
+=======
+>>>>>>> d8f8d85 (implemented state management with redux)
 
 const MainContainer = styled(Box)`
   font-size: 1.1em;
