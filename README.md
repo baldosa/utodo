@@ -66,6 +66,10 @@ Launches the test runner in the interactive watch mode.
 - Flask
 - Webpack
 - Redux
+- Redux Persist
+- Craco
+- Material UI
+- Babel
 - HTML
 - CSS
 
