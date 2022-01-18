@@ -1,14 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-Array.prototype.move = function (from, to) {
-  this.splice(to, 0, this.splice(from, 1)[0]);
-};
-
-interface BoardState {
-  logedin: boolean,
-  name: string,
-  avatar: string
-}
+import { createSlice } from '@reduxjs/toolkit'
 
 let total = Math.floor(Math.random() * 9999);
 let completed = (total-Math.floor(Math.random() * 999));
@@ -67,16 +57,9 @@ export const { increment } = BoardSlice.actions
 
 export const boardReducer = (state = boardInitialState, action) => {
   switch (action.type) {
-    case 'MOVE_LANE':
-      console.log(state);
-      console.log(action.payload.addedIndex);
-      console.log(action.payload.removedIndex);
-      console.log(action.payload.payload);
-      state.lanes.move(action.payload.addedIndex, action.payload.removedIndex)
-      return state
-    case 'DECREMENT':
-      return state - 1
+    case 'UPDATE_BOARD':
+      return action.payload.data;
     default:
-      return state
+      return state;
   }
 };

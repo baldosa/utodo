@@ -16,6 +16,7 @@ module.exports = {
               '@enhancers': path.resolve(__dirname, 'src/enhancers'),
               '@slices': path.resolve(__dirname, 'src/slices'),
               '@reducers': path.resolve(__dirname, 'src/reducers'),
+              '@services': path.resolve(__dirname, 'src/services'),
             },
           }
         },

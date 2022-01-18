@@ -1,10 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-interface UserState {
-  logedin: boolean,
-  name: string,
-  avatar: string
-}
+import { createSlice } from '@reduxjs/toolkit'
 
 const userInitialState =  {
     logedin: false,
