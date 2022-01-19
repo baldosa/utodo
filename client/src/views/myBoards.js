@@ -13,11 +13,7 @@ import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { styled } from '@mui/material/styles';
-<<<<<<< HEAD
 import { useSelector } from 'react-redux'
-=======
-import { useSelector, useDispatch } from 'react-redux'
->>>>>>> af0c0a0 (implemented state management with redux)
 
 const Actions = () => {
   return (
