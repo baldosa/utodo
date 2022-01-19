@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import { Container, Typography, Box, Fab } from '@mui/material';
 import Board from 'react-trello'
 import AddIcon from '@mui/icons-material/Add';
@@ -20,114 +21,126 @@ import Slide from '@mui/material/Slide';
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+=======
+import { Container, Fab } from '@mui/material';
+<<<<<<< HEAD
+import AsyncBoard from 'react-trello'
+import AddIcon from '@mui/icons-material/Add';
+import { Helmet } from "react-helmet";
+import { useSelector, useDispatch } from 'react-redux'
+import { usePrefetch } from '@services/board'
+import { useCallback, useEffect } from 'react'
+=======
+import Board from 'react-trello'
+import AddIcon from '@mui/icons-material/Add';
+import { Helmet } from "react-helmet";
+import { useSelector, useDispatch } from 'react-redux'
+>>>>>>> af0c0a0 (implemented state management with redux)
+
+>>>>>>> d8f8d85 (implemented state management with redux)
 
 // Override components here
 const components = {
   // Card: Card,
 };
 
-const data = {
-  lanes: [
-    {
-      id: 'lane1',
-      title: 'Todo',
-      label: '2/2',
-      cards: [
-        {id: 'Card1', title: 'Write Blog', description: 'Can AI make memes', label: '30 mins', draggable: true},
-        {id: 'Card2', title: 'Pay Rent', description: 'Transfer via NEFT', label: '5 mins', metadata: {sha: 'be312a1'}}
-      ]
-    },
-    {
-      id: 'lane2',
-      title: 'Doing',
-      label: '0/0',
-      cards: []
-    },
-    {
-      id: 'lane2',
-      title: 'Done',
-      label: '0/0',
-      cards: [
-        {id: 'Card3', title: 'Do something important', description: 'Cataloge my memes', label: '30 mins', draggable: true}
-      ]
-    }
-  ]
-}
-
 const BoardView = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+<<<<<<< HEAD
+  let boardData = useSelector(state => state.board);
+  const dispatch = useDispatch();
+  const prefetchPage = usePrefetch('getBoardById', 1);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const prefetchNext = useCallback(() => {
+    prefetchPage()
+  }, [prefetchPage])
+
+
+  useEffect(() => {
+    prefetchNext()
+  }, [prefetchNext])
+
+/*   let eventBus = undefined
+
+  const setEventBus = (handle) => {
+    eventBus = handle
+  } */
+/* 
+  function handleCardDragEnd(cardId, sourceLaneId, targetLaneId, position, cardDetails) {
+    console.log("PUBLISHINBG E ENTUBUS");
+    console.log(boardData);
+    console.log("PUBLISHINBG E ENTUBUS");
+    // console.log(eventBus);
+    dispatch({
+      type: 'MOVE_CARD',
+      payload: {cardId, sourceLaneId, targetLaneId, position, cardDetails}
+    });
+    // return false;
+  }
+
+  function handleLaneDragEnd(removedIndex, addedIndex, payload) {
+    dispatch({
+      type: 'MOVE_LANE',
+      payload: {removedIndex, addedIndex, payload}
+    });
+  }	
+
+  function handleLaneAdd(params) {
+    dispatch({
+      type: 'ADD_LANE',
+      payload: {params}
+    });
+  }
+ */
+
+  function handleDataChange(data) {
+    dispatch({
+      type: 'UPDATE_BOARD',
+      payload: {data}
+    });
+  }	
+  
+=======
+  const boardData = useSelector(state => state.board);
+  const dispatch = useDispatch();
+
+  function handleCardDragEnd(cardId, sourceLaneId, targetLaneId, position, cardDetails) {
+    console.log(cardId);
+    console.log(sourceLaneId);
+    console.log(targetLaneId);
+    console.log(position);
+    console.log(cardDetails);
+  }
+
+  function handleLaneDragEnd(removedIndex, addedIndex, payload) {
+    console.log(removedIndex);
+    console.log(addedIndex);
+    console.log(payload);
+    dispatch({
+      type: 'MOVE_LANE',
+      payload: {removedIndex, addedIndex, payload}
+    })
+  }	
+
+>>>>>>> af0c0a0 (implemented state management with redux)
   return (
     <Container>
       <Helmet>
         <title>uTodo | Board</title>
       </Helmet>
-      <h1>Board&nbsp;
-      <Tooltip title="Edit this board">
-        <IconButton aria-label="Edit Board">
-          <EditIcon onClick={handleClickOpen} />
-        </IconButton>
-      </Tooltip>
-      </h1>
-      <Dialog
-              fullScreen
-              open={open}
-              onClose={handleClose}
-              TransitionComponent={Transition}
-            >
-              <AppBar sx={{ position: 'relative' }}>
-                <Toolbar>
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    onClick={handleClose}
-                    aria-label="close"
-                  >
-                    <CloseIcon />
-                  </IconButton>
-                  <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                    Edit Board
-                  </Typography>
-                  <Button autoFocus color="inherit" onClick={handleClose}>
-                    Save
-                  </Button>
-                </Toolbar>
-              </AppBar>
-              <Box
-              component="form"
-              >
-                <List>
-                  <ListItem>
-                    <TextField
-                      required
-                      id="outlined-required"
-                      label="Board Name"
-                      defaultValue="Current Board Name"
-                      variant="standard"
-                      fullWidth
-                    />
-                  </ListItem>
-                  <Divider />
-                  <ListItem button>
-                    <TextField
-                        label="Board Description"
-                        defaultValue="Current Board Description Text"
-                        variant="standard"
-                        fullWidth
-                        multiline
-                        rows={4}
-                      />
-                  </ListItem>
-                </List>
-              </Box>
-            </Dialog>
-      <Board data={data} components={components} editable />
+      <h1>{boardData.name}</h1>
+<<<<<<< HEAD
+      <AsyncBoard
+        data={boardData}
+        components={components}
+        editable
+        canAddLanes
+        draggable
+        collapsibleLanes
+        onDataChange={handleDataChange}
+      />
+=======
+      <Board data={boardData} components={components} editable canAddLanes draggable collapsibleLanes handleDragEnd={handleCardDragEnd} handleLaneDragEnd={handleLaneDragEnd}	 />
+>>>>>>> af0c0a0 (implemented state management with redux)
       <Fab color="primary" aria-label="add">
         <AddIcon />
       </Fab>
