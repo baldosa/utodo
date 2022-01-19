@@ -11,7 +11,12 @@ module.exports = {
               '@components': path.resolve(__dirname, 'src/components'),
               '@views': path.resolve(__dirname, 'src/views'),
               '@images': path.resolve(__dirname, 'src/static/images'),
-              // ...etc
+              '@features': path.resolve(__dirname, 'src/features'),
+              '@middleware': path.resolve(__dirname, 'src/middleware'),
+              '@enhancers': path.resolve(__dirname, 'src/enhancers'),
+              '@slices': path.resolve(__dirname, 'src/slices'),
+              '@reducers': path.resolve(__dirname, 'src/reducers'),
+              '@services': path.resolve(__dirname, 'src/services'),
             },
           }
         },

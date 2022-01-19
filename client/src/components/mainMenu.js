@@ -90,9 +90,9 @@ const MainMenu = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={"page_"+page.toString().replace(/\s/g, "")} onClick={handleCloseNavMenu}>
                   <UndecoratedLink to={page.replace(/\s/g, "")}>
-                    <Typography textAlign="center" key={page.toString()}>{page}</Typography>
+                    <Typography textAlign="center">{page}</Typography>
                   </UndecoratedLink>
                 </MenuItem>
               ))}
@@ -110,9 +110,8 @@ const MainMenu = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <UndecoratedLink to={page.replace(/\s/g, "")}>
+              <UndecoratedLink to={page.replace(/\s/g, "")} key={page.toString().replace(/\s/g, "")}>
                 <Button
-                  key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
@@ -144,10 +143,10 @@ const MainMenu = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                <UndecoratedLink to={setting}>
-                  <Typography textAlign="center" key={setting.toString()}>{setting}</Typography>
-                </UndecoratedLink>
+                <MenuItem key={"setting_"+setting.toString().replace(/\s/g, "")} onClick={handleCloseNavMenu}>
+                  <UndecoratedLink to={setting}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </UndecoratedLink>
                 </MenuItem>
               ))}
             </Menu>

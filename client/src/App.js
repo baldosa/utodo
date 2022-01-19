@@ -9,6 +9,12 @@ import HelpView from '@views/help';
 import BoardView from '@views/board';
 import MyBoardsView from '@views/myBoards';
 import { styled } from '@mui/system';
+import { persistStore } from 'redux-persist'
+import store from './redux/store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
+
+let persistor = persistStore(store);
 
 const MainContainer = styled(Box)`
   font-size: 1.1em;
@@ -17,16 +23,20 @@ const MainContainer = styled(Box)`
 
 function App() {
   return (
-    <MainContainer>
-      <MainMenu></MainMenu>
-      <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="about" element={<AboutView />} />
-        <Route path="Help" element={<HelpView />} />
-        <Route path="board" element={<BoardView />} />
-        <Route path="myBoards" element={<MyBoardsView />} />
-      </Routes>
-    </MainContainer>
+    <Provider store={store}>
+      <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+        <MainContainer>
+          <MainMenu></MainMenu>
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="about" element={<AboutView />} />
+            <Route path="Help" element={<HelpView />} />
+            <Route path="board" element={<BoardView />} />
+            <Route path="myBoards" element={<MyBoardsView />} />
+          </Routes>
+        </MainContainer>
+    </PersistGate>      
+  </Provider>
   );
 }
 
